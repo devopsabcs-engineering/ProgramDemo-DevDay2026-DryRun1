@@ -156,7 +156,7 @@ Set up `.vscode/mcp.json` at the start of the project so VS Code and Copilot can
     "ado": {
       "type": "stdio",
       "command": "...",
-      "args": ["--organization", "MngEnvMCAP675646", "--project", "ProgramDemo-DevDay2026"]
+      "args": ["--organization", "MngEnvMCAP675646", "--project", "ProgramDemo-DevDay2026-DryRun1"]
     }
   }
 }
