@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  checks: write
 
 jobs:
   backend:
@@ -32,6 +33,14 @@ jobs:
           chmod +x ./mvnw
           ./mvnw -B verify
 
+      - name: Publish backend test results
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Backend Test Results
+          path: backend/target/surefire-reports/*.xml
+          reporter: java-junit
+
   frontend:
     name: Frontend Build & Test
     runs-on: ubuntu-latest
@@ -53,6 +62,14 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Publish frontend test results
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Frontend Test Results
+          path: frontend/test-results/junit.xml
+          reporter: java-junit
 
       - name: Build
         run: npm run build

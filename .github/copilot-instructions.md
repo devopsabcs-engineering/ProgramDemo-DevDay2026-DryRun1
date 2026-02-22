@@ -66,3 +66,7 @@ Fixes AB#{id}
 - `backend/` — Java 21 + Spring Boot 3.x API
 - `frontend/` — React 18 + TypeScript + Vite application
 - `database/` — Flyway SQL migration scripts
+
+## CI Test Reporting
+
+All CI workflows must publish test results to the GitHub Actions workflow summary using `dorny/test-reporter@v1` with `java-junit` reporter. Each test job must include a reporting step with `if: always()` so results appear even when tests fail. Report names must follow `{Layer} Test Results` (for example, `Backend Test Results`, `Frontend Test Results`). Vitest must output JUnit XML via the `junit` reporter configured in `vitest.config.ts`.
