@@ -1,5 +1,6 @@
 package com.ontario.program.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -59,6 +60,9 @@ public class Program {
 
     @Column(name = "created_by", nullable = false, length = 100)
     private String createdBy;
+
+    @Column(name = "program_budget", precision = 15, scale = 2)
+    private BigDecimal programBudget;
 
     protected Program() {
         // JPA requires a no-arg constructor
@@ -161,5 +165,13 @@ public class Program {
 
     public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
+    }
+
+    public BigDecimal getProgramBudget() {
+        return programBudget;
+    }
+
+    public void setProgramBudget(BigDecimal programBudget) {
+        this.programBudget = programBudget;
     }
 }

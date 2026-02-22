@@ -27,6 +27,7 @@ export interface ProgramResponse {
   createdAt: string;
   updatedAt: string;
   createdBy: string;
+  programBudget: number | null;
 }
 
 export interface ProgramSubmitRequest {
@@ -34,6 +35,7 @@ export interface ProgramSubmitRequest {
   programDescription: string;
   programTypeId: number;
   createdBy: string;
+  programBudget: number | null;
 }
 
 export interface ProgramReviewRequest {

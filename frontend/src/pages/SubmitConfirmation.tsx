@@ -57,6 +57,12 @@ const SubmitConfirmation: React.FC = () => {
             <th scope="row">{t('confirmation.submittedBy')}</th>
             <td>{program.createdBy}</td>
           </tr>
+          {program.programBudget !== null && (
+            <tr>
+              <th scope="row">{t('confirmation.programBudget')}</th>
+              <td>${program.programBudget.toLocaleString(i18n.language, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            </tr>
+          )}
         </tbody>
       </table>
 

@@ -1,5 +1,7 @@
 package com.ontario.program.controller;
 
+import java.math.BigDecimal;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ontario.program.dto.ProgramReviewRequest;
 import com.ontario.program.dto.ProgramSubmitRequest;
@@ -46,7 +48,7 @@ class ProgramControllerTests {
     @Test
     void shouldSubmitProgram() throws Exception {
         ProgramSubmitRequest request = new ProgramSubmitRequest(
-                "Youth Arts Program", "A program for youth arts", 1, "citizen1");
+                "Youth Arts Program", "A program for youth arts", 1, "citizen1", null);
 
         mockMvc.perform(post("/api/programs")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -62,7 +64,7 @@ class ProgramControllerTests {
     @Test
     void shouldReturnValidationErrorForBlankName() throws Exception {
         ProgramSubmitRequest request = new ProgramSubmitRequest(
-                "", "A description", 1, "citizen1");
+                "", "A description", 1, "citizen1", null);
 
         mockMvc.perform(post("/api/programs")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -75,7 +77,7 @@ class ProgramControllerTests {
     void shouldGetAllPrograms() throws Exception {
         // Submit a program first
         ProgramSubmitRequest request = new ProgramSubmitRequest(
-                "List Test Program", "Description", 1, "citizen1");
+                "List Test Program", "Description", 1, "citizen1", null);
         mockMvc.perform(post("/api/programs")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(request)));
@@ -89,7 +91,7 @@ class ProgramControllerTests {
     void shouldGetProgramById() throws Exception {
         // Submit a program first
         ProgramSubmitRequest request = new ProgramSubmitRequest(
-                "Get By ID Test", "Description", 1, "citizen1");
+                "Get By ID Test", "Description", 1, "citizen1", null);
         MvcResult result = mockMvc.perform(post("/api/programs")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
@@ -115,7 +117,7 @@ class ProgramControllerTests {
     void shouldApproveProgram() throws Exception {
         // Submit a program first
         ProgramSubmitRequest submitRequest = new ProgramSubmitRequest(
-                "Approve Test Program", "Description", 1, "citizen1");
+                "Approve Test Program", "Description", 1, "citizen1", null);
         MvcResult result = mockMvc.perform(post("/api/programs")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(submitRequest)))
@@ -141,7 +143,7 @@ class ProgramControllerTests {
     void shouldRejectProgram() throws Exception {
         // Submit a program first
         ProgramSubmitRequest submitRequest = new ProgramSubmitRequest(
-                "Reject Test Program", "Description", 1, "citizen1");
+                "Reject Test Program", "Description", 1, "citizen1", null);
         MvcResult result = mockMvc.perform(post("/api/programs")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(submitRequest)))
@@ -180,6 +182,33 @@ class ProgramControllerTests {
         mockMvc.perform(put("/api/programs/1/review")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(reviewRequest)))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.title", is("Validation Failed")));
+    }
+
+    @Test
+    void shouldSubmitProgramWithBudget() throws Exception {
+        ProgramSubmitRequest request = new ProgramSubmitRequest(
+                "Budget Program", "A program with budget", 1, "citizen1",
+                new BigDecimal("50000.00"));
+
+        mockMvc.perform(post("/api/programs")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.programName", is("Budget Program")))
+                .andExpect(jsonPath("$.programBudget", is(50000.00)));
+    }
+
+    @Test
+    void shouldReturnValidationErrorForNegativeBudget() throws Exception {
+        ProgramSubmitRequest request = new ProgramSubmitRequest(
+                "Negative Budget", "Description", 1, "citizen1",
+                new BigDecimal("-100.00"));
+
+        mockMvc.perform(post("/api/programs")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.title", is("Validation Failed")));
     }

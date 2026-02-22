@@ -78,6 +78,7 @@ describe('SubmitProgram', () => {
       createdAt: '2026-01-01T12:00:00',
       updatedAt: '2026-01-01T12:00:00',
       createdBy: 'Jane Doe',
+      programBudget: null,
     };
     (programService.submitProgram as ReturnType<typeof vi.fn>).mockResolvedValue(mockResponse);
 
@@ -100,6 +101,7 @@ describe('SubmitProgram', () => {
         programDescription: 'A test program',
         programTypeId: 1,
         createdBy: 'Jane Doe',
+        programBudget: null,
       });
       expect(mockNavigate).toHaveBeenCalledWith('/submit/confirmation', {
         state: { program: mockResponse },

@@ -25,6 +25,7 @@ const mockPrograms = [
     createdAt: '2026-01-15T14:30:00',
     updatedAt: '2026-01-15T14:30:00',
     createdBy: 'John Smith',
+    programBudget: null,
   },
   {
     id: 2,
@@ -40,6 +41,7 @@ const mockPrograms = [
     createdAt: '2026-01-16T10:00:00',
     updatedAt: '2026-01-17T09:00:00',
     createdBy: 'Mary Jane',
+    programBudget: null,
   },
 ];
 

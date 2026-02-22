@@ -33,6 +33,8 @@
     "submitButton": "Soumettre la demande",
     "submitting": "Soumission en cours...",
     "required": "requis",
+    "programBudget": "Budget du programme",
+    "programBudgetPlaceholder": "Entrez le montant du budget",
     "validation": {
       "nameRequired": "Le nom du programme est requis",
       "nameMaxLength": "Le nom du programme doit comporter 255 caractères ou moins",
@@ -40,7 +42,8 @@
       "descriptionMaxLength": "La description du programme doit comporter 4000 caractères ou moins",
       "typeRequired": "Le type de programme est requis",
       "createdByRequired": "Votre nom est requis",
-      "createdByMaxLength": "Votre nom doit comporter 255 caractères ou moins"
+      "createdByMaxLength": "Votre nom doit comporter 255 caractères ou moins",
+      "budgetMin": "Le budget doit être zéro ou un montant positif"
     }
   },
   "confirmation": {
@@ -52,6 +55,7 @@
     "status": "Statut",
     "submittedAt": "Soumis le",
     "submittedBy": "Soumis par",
+    "programBudget": "Budget du programme",
     "submitAnother": "Soumettre une autre demande",
     "searchPrograms": "Rechercher des programmes"
   },
@@ -114,6 +118,7 @@
       "status": "Statut",
       "submittedAt": "Soumis le",
       "submittedBy": "Soumis par",
+      "programBudget": "Budget du programme",
       "reviewedAt": "Révisé le",
       "reviewAction": "Action de révision",
       "comments": "Commentaires du réviseur",
