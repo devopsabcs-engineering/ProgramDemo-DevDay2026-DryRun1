@@ -12,6 +12,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
+
+import org.hibernate.annotations.Nationalized;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
@@ -41,6 +43,7 @@ public class Notification {
     private String subject;
 
     @Lob
+    @Nationalized
     @Column(name = "body", nullable = false)
     private String body;
 
