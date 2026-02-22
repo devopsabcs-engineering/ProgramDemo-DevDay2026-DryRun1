@@ -1,0 +1,88 @@
+{
+  "app": {
+    "title": "Système d'approbation des programmes de la FPO",
+    "skipToContent": "Passer au contenu principal"
+  },
+  "nav": {
+    "home": "Accueil",
+    "submit": "Soumettre un programme",
+    "search": "Rechercher des programmes",
+    "review": "Réviser les programmes"
+  },
+  "header": {
+    "governmentOf": "Ontario.ca",
+    "languageToggle": "English"
+  },
+  "footer": {
+    "copyright": "© Imprimeur du Roi pour l'Ontario, 2026",
+    "accessibility": "Accessibilité",
+    "privacy": "Confidentialité",
+    "termsOfUse": "Conditions d'utilisation"
+  },
+  "submit": {
+    "title": "Soumettre une demande de programme",
+    "programName": "Nom du programme",
+    "programNamePlaceholder": "Entrez le nom du programme",
+    "programDescription": "Description du programme",
+    "programDescriptionPlaceholder": "Décrivez le programme que vous demandez",
+    "programType": "Type de programme",
+    "programTypeSelect": "Sélectionnez un type de programme",
+    "yourName": "Votre nom",
+    "yourNamePlaceholder": "Entrez votre nom complet",
+    "submitButton": "Soumettre la demande",
+    "submitting": "Soumission en cours...",
+    "validation": {
+      "nameRequired": "Le nom du programme est requis",
+      "nameMaxLength": "Le nom du programme doit comporter 255 caractères ou moins",
+      "descriptionRequired": "La description du programme est requise",
+      "descriptionMaxLength": "La description du programme doit comporter 4000 caractères ou moins",
+      "typeRequired": "Le type de programme est requis",
+      "createdByRequired": "Votre nom est requis",
+      "createdByMaxLength": "Votre nom doit comporter 255 caractères ou moins"
+    }
+  },
+  "confirmation": {
+    "title": "Demande de programme soumise",
+    "message": "Votre demande de programme a été soumise avec succès.",
+    "details": "Détails de la soumission",
+    "programName": "Nom du programme",
+    "programType": "Type de programme",
+    "status": "Statut",
+    "submittedAt": "Soumis le",
+    "submittedBy": "Soumis par",
+    "submitAnother": "Soumettre une autre demande",
+    "searchPrograms": "Rechercher des programmes"
+  },
+  "search": {
+    "title": "Rechercher des programmes",
+    "searchPlaceholder": "Rechercher par nom de programme...",
+    "searchButton": "Rechercher",
+    "clearButton": "Effacer",
+    "noResults": "Aucun programme trouvé.",
+    "loadingError": "Échec du chargement des programmes. Veuillez réessayer.",
+    "table": {
+      "id": "ID",
+      "programName": "Nom du programme",
+      "programType": "Type de programme",
+      "status": "Statut",
+      "submittedAt": "Soumis",
+      "createdBy": "Soumis par"
+    }
+  },
+  "status": {
+    "SUBMITTED": "Soumis",
+    "APPROVED": "Approuvé",
+    "REJECTED": "Rejeté"
+  },
+  "home": {
+    "title": "Bienvenue au Système d'approbation des programmes de la FPO",
+    "description": "Ce système permet aux citoyens de l'Ontario de soumettre des demandes de programmes et aux employés du ministère de les réviser et de les approuver.",
+    "citizenTitle": "Pour les citoyens",
+    "citizenDescription": "Soumettez une nouvelle demande de programme ou recherchez des programmes existants.",
+    "submitLink": "Soumettre un programme",
+    "searchLink": "Rechercher des programmes",
+    "ministryTitle": "Pour les employés du ministère",
+    "ministryDescription": "Révisez et approuvez ou rejetez les demandes de programmes soumises.",
+    "reviewLink": "Réviser les programmes"
+  }
+}
