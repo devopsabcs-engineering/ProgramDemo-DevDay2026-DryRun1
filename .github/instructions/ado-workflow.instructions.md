@@ -22,6 +22,12 @@ applyTo: "**"
 - Squash merge PRs to keep `main` history clean
 - PR title should match the user story title
 
+## Tagging
+
+- All work items created by AI agents (GitHub Copilot, MCP tools, etc.) must include the tag `Agentic AI`
+- This tag distinguishes AI-generated work items from human-created ones
+- Apply the tag at creation time using the `System.Tags` field
+
 ## Post-Merge
 
 - Delete the feature branch after PR merge
