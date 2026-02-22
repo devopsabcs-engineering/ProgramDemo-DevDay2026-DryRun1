@@ -1,0 +1,88 @@
+{
+  "app": {
+    "title": "OPS Program Approval System",
+    "skipToContent": "Skip to main content"
+  },
+  "nav": {
+    "home": "Home",
+    "submit": "Submit Program",
+    "search": "Search Programs",
+    "review": "Review Programs"
+  },
+  "header": {
+    "governmentOf": "Ontario.ca",
+    "languageToggle": "Français"
+  },
+  "footer": {
+    "copyright": "© King's Printer for Ontario, 2026",
+    "accessibility": "Accessibility",
+    "privacy": "Privacy",
+    "termsOfUse": "Terms of use"
+  },
+  "submit": {
+    "title": "Submit a Program Request",
+    "programName": "Program Name",
+    "programNamePlaceholder": "Enter program name",
+    "programDescription": "Program Description",
+    "programDescriptionPlaceholder": "Describe the program you are requesting",
+    "programType": "Program Type",
+    "programTypeSelect": "Select a program type",
+    "yourName": "Your Name",
+    "yourNamePlaceholder": "Enter your full name",
+    "submitButton": "Submit Request",
+    "submitting": "Submitting...",
+    "validation": {
+      "nameRequired": "Program name is required",
+      "nameMaxLength": "Program name must be 255 characters or fewer",
+      "descriptionRequired": "Program description is required",
+      "descriptionMaxLength": "Program description must be 4000 characters or fewer",
+      "typeRequired": "Program type is required",
+      "createdByRequired": "Your name is required",
+      "createdByMaxLength": "Your name must be 255 characters or fewer"
+    }
+  },
+  "confirmation": {
+    "title": "Program Request Submitted",
+    "message": "Your program request has been submitted successfully.",
+    "details": "Submission Details",
+    "programName": "Program Name",
+    "programType": "Program Type",
+    "status": "Status",
+    "submittedAt": "Submitted At",
+    "submittedBy": "Submitted By",
+    "submitAnother": "Submit Another Request",
+    "searchPrograms": "Search Programs"
+  },
+  "search": {
+    "title": "Search Programs",
+    "searchPlaceholder": "Search by program name...",
+    "searchButton": "Search",
+    "clearButton": "Clear",
+    "noResults": "No programs found.",
+    "loadingError": "Failed to load programs. Please try again.",
+    "table": {
+      "id": "ID",
+      "programName": "Program Name",
+      "programType": "Program Type",
+      "status": "Status",
+      "submittedAt": "Submitted",
+      "createdBy": "Submitted By"
+    }
+  },
+  "status": {
+    "SUBMITTED": "Submitted",
+    "APPROVED": "Approved",
+    "REJECTED": "Rejected"
+  },
+  "home": {
+    "title": "Welcome to the OPS Program Approval System",
+    "description": "This system allows Ontario citizens to submit program requests and Ministry employees to review and approve them.",
+    "citizenTitle": "For Citizens",
+    "citizenDescription": "Submit a new program request or search for existing programs.",
+    "submitLink": "Submit a Program",
+    "searchLink": "Search Programs",
+    "ministryTitle": "For Ministry Employees",
+    "ministryDescription": "Review and approve or reject submitted program requests.",
+    "reviewLink": "Review Programs"
+  }
+}
