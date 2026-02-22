@@ -84,5 +84,46 @@
     "ministryTitle": "For Ministry Employees",
     "ministryDescription": "Review and approve or reject submitted program requests.",
     "reviewLink": "Review Programs"
+  },
+  "review": {
+    "title": "Review Dashboard",
+    "description": "Review submitted program requests. Click a program to view details and approve or reject.",
+    "loading": "Loading...",
+    "loadingError": "Failed to load programs. Please try again.",
+    "noPrograms": "No programs have been submitted yet.",
+    "table": {
+      "id": "ID",
+      "programName": "Program Name",
+      "programType": "Program Type",
+      "status": "Status",
+      "submittedAt": "Submitted",
+      "createdBy": "Submitted By",
+      "actions": "Actions",
+      "reviewButton": "Review"
+    },
+    "detail": {
+      "title": "Review Program",
+      "programDetails": "Program Details",
+      "programId": "Program ID",
+      "programName": "Program Name",
+      "programDescription": "Program Description",
+      "programType": "Program Type",
+      "status": "Status",
+      "submittedAt": "Submitted At",
+      "submittedBy": "Submitted By",
+      "reviewedAt": "Reviewed At",
+      "reviewAction": "Review Action",
+      "comments": "Reviewer Comments",
+      "commentsHint": "Optional — provide feedback to the applicant (max 4000 characters).",
+      "approveButton": "Approve",
+      "rejectButton": "Reject",
+      "processing": "Processing...",
+      "approvedMessage": "Program has been approved successfully.",
+      "rejectedMessage": "Program has been rejected.",
+      "reviewError": "Failed to submit review. Please try again.",
+      "notFound": "Program not found.",
+      "backToDashboard": "Back to Dashboard",
+      "reviewForm": "Program review form"
+    }
   }
 }

@@ -84,5 +84,46 @@
     "ministryTitle": "Pour les employés du ministère",
     "ministryDescription": "Révisez et approuvez ou rejetez les demandes de programmes soumises.",
     "reviewLink": "Réviser les programmes"
+  },
+  "review": {
+    "title": "Tableau de bord de révision",
+    "description": "Révisez les demandes de programmes soumises. Cliquez sur un programme pour voir les détails et approuver ou rejeter.",
+    "loading": "Chargement...",
+    "loadingError": "Échec du chargement des programmes. Veuillez réessayer.",
+    "noPrograms": "Aucun programme n'a encore été soumis.",
+    "table": {
+      "id": "ID",
+      "programName": "Nom du programme",
+      "programType": "Type de programme",
+      "status": "Statut",
+      "submittedAt": "Soumis",
+      "createdBy": "Soumis par",
+      "actions": "Actions",
+      "reviewButton": "Réviser"
+    },
+    "detail": {
+      "title": "Réviser le programme",
+      "programDetails": "Détails du programme",
+      "programId": "ID du programme",
+      "programName": "Nom du programme",
+      "programDescription": "Description du programme",
+      "programType": "Type de programme",
+      "status": "Statut",
+      "submittedAt": "Soumis le",
+      "submittedBy": "Soumis par",
+      "reviewedAt": "Révisé le",
+      "reviewAction": "Action de révision",
+      "comments": "Commentaires du réviseur",
+      "commentsHint": "Facultatif — fournissez des commentaires au demandeur (max 4000 caractères).",
+      "approveButton": "Approuver",
+      "rejectButton": "Rejeter",
+      "processing": "Traitement en cours...",
+      "approvedMessage": "Le programme a été approuvé avec succès.",
+      "rejectedMessage": "Le programme a été rejeté.",
+      "reviewError": "Échec de la soumission de la révision. Veuillez réessayer.",
+      "notFound": "Programme non trouvé.",
+      "backToDashboard": "Retour au tableau de bord",
+      "reviewForm": "Formulaire de révision du programme"
+    }
   }
 }
