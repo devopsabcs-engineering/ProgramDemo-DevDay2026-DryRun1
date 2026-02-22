@@ -1,0 +1,33 @@
+package com.ontario.program.config;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
+/**
+ * CORS configuration — allows the frontend origin to call the API
+ * when frontend and backend are on different App Service instances.
+ */
+@Configuration
+public class CorsConfig {
+
+    @Value("${app.cors.allowed-origin:http://localhost:3000}")
+    private String allowedOrigin;
+
+    @Bean
+    public CorsFilter corsFilter() {
+        final CorsConfiguration config = new CorsConfiguration();
+        config.addAllowedOrigin(allowedOrigin);
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
+        config.setAllowCredentials(true);
+        config.setMaxAge(3600L);
+
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/api/**", config);
+        return new CorsFilter(source);
+    }
+}

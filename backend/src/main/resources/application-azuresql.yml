@@ -46,7 +46,7 @@ server:
 
 app:
   cors:
-    allowed-origin: http://localhost:3000
+    allowed-origin: ${APP_CORS_ALLOWED_ORIGIN:http://localhost:3000}
 
 logging:
   level:

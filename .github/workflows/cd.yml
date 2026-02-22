@@ -80,7 +80,7 @@ jobs:
       - name: Build for production
         run: npm run build
         env:
-          VITE_API_BASE_URL: /api
+          VITE_API_BASE_URL: https://${{ env.BACKEND_APP_NAME }}.azurewebsites.net/api
 
       - name: Upload frontend artifact
         uses: actions/upload-artifact@v4
@@ -126,6 +126,7 @@ jobs:
             --settings \
               SPRING_PROFILES_ACTIVE=azuresql \
               SPRING_DATASOURCE_URL="jdbc:sqlserver://${{ env.SQL_SERVER_NAME }}.database.windows.net:1433;database=${{ env.SQL_DATABASE_NAME }};encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=60;authentication=ActiveDirectoryManagedIdentity;msiClientId=${{ vars.SQL_IDENTITY_CLIENT_ID }};connectRetryCount=3;connectRetryInterval=10;" \
+              APP_CORS_ALLOWED_ORIGIN="https://${{ env.FRONTEND_APP_NAME }}.azurewebsites.net" \
             --only-show-errors
 
       - name: Restart App Service
