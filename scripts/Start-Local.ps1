@@ -44,7 +44,8 @@ $ErrorActionPreference = "Stop"
 
 function Test-PortInUse {
     param([int]$Port)
-    $connection = Get-NetTCPConnection -LocalPort $Port -ErrorAction SilentlyContinue
+    $connection = Get-NetTCPConnection -LocalPort $Port -ErrorAction SilentlyContinue |
+        Where-Object { $_.State -eq 'Listen' -or $_.State -eq 'Established' }
     return $null -ne $connection
 }
 
@@ -67,7 +68,7 @@ if (-not $BackendOnly) {
 if (-not $SkipBuild) {
     if (-not $FrontendOnly) {
         Write-Host "Building backend (Maven)..." -ForegroundColor Cyan
-        & ./mvnw -f backend/pom.xml clean package -DskipTests
+        & backend/mvnw.cmd -f backend/pom.xml clean package -DskipTests
         if ($LASTEXITCODE -ne 0) {
             Write-Host "ERROR: Maven build failed." -ForegroundColor Red
             exit 1
@@ -105,7 +106,7 @@ if (-not $FrontendOnly) {
     $backendJob = Start-Job -ScriptBlock {
         Set-Location $using:PWD
         $env:SPRING_PROFILES_ACTIVE = $using:springProfile
-        & ./mvnw -f backend/pom.xml spring-boot:run
+        & backend/mvnw.cmd -f backend/pom.xml spring-boot:run
     }
     $jobs += $backendJob
     Write-Host "Backend started (Job ID: $($backendJob.Id))." -ForegroundColor Green
