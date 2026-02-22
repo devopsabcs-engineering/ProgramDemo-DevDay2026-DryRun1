@@ -36,6 +36,11 @@ export interface ProgramSubmitRequest {
   createdBy: string;
 }
 
+export interface ProgramReviewRequest {
+  status: 'APPROVED' | 'REJECTED';
+  reviewerComments: string;
+}
+
 export const programService = {
   async getProgramTypes(): Promise<ProgramType[]> {
     const response = await api.get<ProgramType[]>('/program-types');
@@ -54,6 +59,11 @@ export const programService = {
 
   async getProgramById(id: number): Promise<ProgramResponse> {
     const response = await api.get<ProgramResponse>(`/programs/${id}`);
+    return response.data;
+  },
+
+  async reviewProgram(id: number, request: ProgramReviewRequest): Promise<ProgramResponse> {
+    const response = await api.put<ProgramResponse>(`/programs/${id}/review`, request);
     return response.data;
   },
 };
