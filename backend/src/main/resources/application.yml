@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: program-approval-api
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
