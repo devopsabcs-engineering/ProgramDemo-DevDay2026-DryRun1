@@ -7,7 +7,8 @@
     "home": "Accueil",
     "submit": "Soumettre un programme",
     "search": "Rechercher des programmes",
-    "review": "Réviser les programmes"
+    "review": "Réviser les programmes",
+    "mainNavigation": "Navigation principale"
   },
   "header": {
     "governmentOf": "Ontario.ca",
@@ -31,6 +32,7 @@
     "yourNamePlaceholder": "Entrez votre nom complet",
     "submitButton": "Soumettre la demande",
     "submitting": "Soumission en cours...",
+    "required": "requis",
     "validation": {
       "nameRequired": "Le nom du programme est requis",
       "nameMaxLength": "Le nom du programme doit comporter 255 caractères ou moins",
@@ -58,6 +60,7 @@
     "searchPlaceholder": "Rechercher par nom de programme...",
     "searchButton": "Rechercher",
     "clearButton": "Effacer",
+    "loading": "Chargement...",
     "noResults": "Aucun programme trouvé.",
     "loadingError": "Échec du chargement des programmes. Veuillez réessayer.",
     "table": {

@@ -7,7 +7,8 @@
     "home": "Home",
     "submit": "Submit Program",
     "search": "Search Programs",
-    "review": "Review Programs"
+    "review": "Review Programs",
+    "mainNavigation": "Main navigation"
   },
   "header": {
     "governmentOf": "Ontario.ca",
@@ -31,6 +32,7 @@
     "yourNamePlaceholder": "Enter your full name",
     "submitButton": "Submit Request",
     "submitting": "Submitting...",
+    "required": "required",
     "validation": {
       "nameRequired": "Program name is required",
       "nameMaxLength": "Program name must be 255 characters or fewer",
@@ -58,6 +60,7 @@
     "searchPlaceholder": "Search by program name...",
     "searchButton": "Search",
     "clearButton": "Clear",
+    "loading": "Loading...",
     "noResults": "No programs found.",
     "loadingError": "Failed to load programs. Please try again.",
     "table": {

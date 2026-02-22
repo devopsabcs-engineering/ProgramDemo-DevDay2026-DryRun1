@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           <LanguageToggle />
         </div>
       </div>
-      <nav className="ontario-header__nav" aria-label="Main navigation">
+      <nav className="ontario-header__nav" aria-label={t('nav.mainNavigation')}>
         <div className="ontario-header__container">
           <ul className="ontario-header__nav-list">
             <li className="ontario-header__nav-item">

@@ -86,10 +86,10 @@ const SubmitProgram: React.FC = () => {
         <div className={`ontario-form-group ${errors.programName ? 'ontario-form-group--error' : ''}`}>
           <label className="ontario-label" htmlFor="programName">
             {t('submit.programName')}
-            <span className="ontario-label__flag">(required)</span>
+            <span className="ontario-label__flag">({t('submit.required')})</span>
           </label>
           {errors.programName && (
-            <div className="ontario-error-messaging" role="alert">
+            <div className="ontario-error-messaging" role="alert" id="programName-error">
               <span className="ontario-error-messaging__content">{errors.programName}</span>
             </div>
           )}
@@ -97,6 +97,7 @@ const SubmitProgram: React.FC = () => {
             className="ontario-input"
             type="text"
             id="programName"
+            aria-describedby={errors.programName ? 'programName-error' : undefined}
             name="programName"
             value={formData.programName}
             onChange={(e) => setFormData({ ...formData, programName: e.target.value })}
@@ -111,16 +112,17 @@ const SubmitProgram: React.FC = () => {
         <div className={`ontario-form-group ${errors.programDescription ? 'ontario-form-group--error' : ''}`}>
           <label className="ontario-label" htmlFor="programDescription">
             {t('submit.programDescription')}
-            <span className="ontario-label__flag">(required)</span>
+            <span className="ontario-label__flag">({t('submit.required')})</span>
           </label>
           {errors.programDescription && (
-            <div className="ontario-error-messaging" role="alert">
+            <div className="ontario-error-messaging" role="alert" id="programDescription-error">
               <span className="ontario-error-messaging__content">{errors.programDescription}</span>
             </div>
           )}
           <textarea
             className="ontario-input ontario-textarea"
             id="programDescription"
+            aria-describedby={errors.programDescription ? 'programDescription-error' : undefined}
             name="programDescription"
             value={formData.programDescription}
             onChange={(e) => setFormData({ ...formData, programDescription: e.target.value })}
@@ -136,16 +138,17 @@ const SubmitProgram: React.FC = () => {
         <div className={`ontario-form-group ${errors.programTypeId ? 'ontario-form-group--error' : ''}`}>
           <label className="ontario-label" htmlFor="programTypeId">
             {t('submit.programType')}
-            <span className="ontario-label__flag">(required)</span>
+            <span className="ontario-label__flag">({t('submit.required')})</span>
           </label>
           {errors.programTypeId && (
-            <div className="ontario-error-messaging" role="alert">
+            <div className="ontario-error-messaging" role="alert" id="programTypeId-error">
               <span className="ontario-error-messaging__content">{errors.programTypeId}</span>
             </div>
           )}
           <select
             className="ontario-input ontario-dropdown"
             id="programTypeId"
+            aria-describedby={errors.programTypeId ? 'programTypeId-error' : undefined}
             name="programTypeId"
             value={formData.programTypeId}
             onChange={(e) => setFormData({ ...formData, programTypeId: Number(e.target.value) })}
@@ -167,10 +170,10 @@ const SubmitProgram: React.FC = () => {
         <div className={`ontario-form-group ${errors.createdBy ? 'ontario-form-group--error' : ''}`}>
           <label className="ontario-label" htmlFor="createdBy">
             {t('submit.yourName')}
-            <span className="ontario-label__flag">(required)</span>
+            <span className="ontario-label__flag">({t('submit.required')})</span>
           </label>
           {errors.createdBy && (
-            <div className="ontario-error-messaging" role="alert">
+            <div className="ontario-error-messaging" role="alert" id="createdBy-error">
               <span className="ontario-error-messaging__content">{errors.createdBy}</span>
             </div>
           )}
@@ -178,6 +181,7 @@ const SubmitProgram: React.FC = () => {
             className="ontario-input"
             type="text"
             id="createdBy"
+            aria-describedby={errors.createdBy ? 'createdBy-error' : undefined}
             name="createdBy"
             value={formData.createdBy}
             onChange={(e) => setFormData({ ...formData, createdBy: e.target.value })}

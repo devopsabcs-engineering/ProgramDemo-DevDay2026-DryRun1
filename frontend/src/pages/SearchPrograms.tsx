@@ -51,7 +51,7 @@ const SearchPrograms: React.FC = () => {
     return (
       <section aria-labelledby="search-title">
         <h1 id="search-title" className="ontario-h1">{t('search.title')}</h1>
-        <p>Loading...</p>
+        <p>{t('search.loading')}</p>
       </section>
     );
   }
