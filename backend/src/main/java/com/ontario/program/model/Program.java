@@ -12,6 +12,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
+
+import org.hibernate.annotations.Nationalized;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -32,6 +34,7 @@ public class Program {
     private String programName;
 
     @Lob
+    @Nationalized
     @Column(name = "program_description", nullable = false)
     private String programDescription;
 
@@ -43,6 +46,7 @@ public class Program {
     private String status = "DRAFT";
 
     @Lob
+    @Nationalized
     @Column(name = "reviewer_comments")
     private String reviewerComments;
 
