@@ -44,61 +44,61 @@ Generate all 13 scaffolding files (7 configuration + 3 documentation + 2 scripts
 
 ## Implementation Checklist
 
-### [ ] Implementation Phase 1: Configuration Layer
+### [x] Implementation Phase 1: Configuration Layer
 
 <!-- parallelizable: true -->
 
-- [ ] Step 1.1: Create `.github/copilot-instructions.md` — global Copilot instructions
+- [x] Step 1.1: Create `.github/copilot-instructions.md` — global Copilot instructions
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 12-47)
-- [ ] Step 1.2: Create `.github/instructions/ado-workflow.instructions.md`
+- [x] Step 1.2: Create `.github/instructions/ado-workflow.instructions.md`
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 49-87)
-- [ ] Step 1.3: Create `.github/instructions/java.instructions.md`
+- [x] Step 1.3: Create `.github/instructions/java.instructions.md`
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 89-132)
-- [ ] Step 1.4: Create `.github/instructions/react.instructions.md`
+- [x] Step 1.4: Create `.github/instructions/react.instructions.md`
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 134-177)
-- [ ] Step 1.5: Create `.github/instructions/sql.instructions.md`
+- [x] Step 1.5: Create `.github/instructions/sql.instructions.md`
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 179-222)
-- [ ] Step 1.6: Create `.vscode/mcp.json` — MCP server configuration for ADO
+- [x] Step 1.6: Create `.vscode/mcp.json` — MCP server configuration for ADO
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 224-265)
-- [ ] Step 1.7: Create `.gitignore` — combined Java + Node + IDE + OS ignore rules
+- [x] Step 1.7: Create `.gitignore` — combined Java + Node + IDE + OS ignore rules
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 267-304)
 
-### [ ] Implementation Phase 2: Documentation Layer
+### [x] Implementation Phase 2: Documentation Layer
 
 <!-- parallelizable: true -->
 
-- [ ] Step 2.1: Create `docs/architecture.md` — C4-style architecture with Mermaid flowchart
+- [x] Step 2.1: Create `docs/architecture.md` — C4-style architecture with Mermaid flowchart
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 310-356)
-- [ ] Step 2.2: Create `docs/data-dictionary.md` — database schema with Mermaid ER diagram
+- [x] Step 2.2: Create `docs/data-dictionary.md` — database schema with Mermaid ER diagram
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 358-406)
-- [ ] Step 2.3: Create `docs/design-document.md` — API endpoints, DTOs, component hierarchy
+- [x] Step 2.3: Create `docs/design-document.md` — API endpoints, DTOs, component hierarchy
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 408-454)
 
-### [ ] Implementation Phase 3: Operational Layer
+### [x] Implementation Phase 3: Operational Layer
 
 <!-- parallelizable: true -->
 
-- [ ] Step 3.1: Create `scripts/Start-Local.ps1` — local development startup script
+- [x] Step 3.1: Create `scripts/Start-Local.ps1` — local development startup script
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 460-505)
-- [ ] Step 3.2: Create `scripts/Stop-Local.ps1` — local development stop script
+- [x] Step 3.2: Create `scripts/Stop-Local.ps1` — local development stop script
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 507-541)
-- [ ] Step 3.3: Create `TALK-TRACK.md` — full 130-minute talk track at repository root
+- [x] Step 3.3: Create `TALK-TRACK.md` — full 130-minute talk track at repository root
   - Details: .copilot-tracking/details/2026-02-21/demo-scaffolding-details.md (Lines 543-600)
 
-### [ ] Implementation Phase 4: Validation
+### [x] Implementation Phase 4: Validation
 
 <!-- parallelizable: false -->
 
-- [ ] Step 4.1: Verify all 13 files exist with correct paths
+- [x] Step 4.1: Verify all 13 files exist with correct paths
   - List all created files and compare against the target structure in research document
-- [ ] Step 4.2: Validate instruction file frontmatter
+- [x] Step 4.2: Validate instruction file frontmatter
   - Confirm each `.instructions.md` file has `description` and `applyTo` in YAML frontmatter
-- [ ] Step 4.3: Validate Mermaid diagrams render correctly
+- [x] Step 4.3: Validate Mermaid diagrams render correctly
   - Verify `docs/architecture.md` flowchart and `docs/data-dictionary.md` ER diagram syntax
-- [ ] Step 4.4: Validate talk track completeness
+- [x] Step 4.4: Validate talk track completeness
   - Confirm all 130 minutes are covered with no gaps between sections
   - Verify commit checkpoint table includes all 9 tags (v0.1.0–v1.0.0)
-- [ ] Step 4.5: Report any blocking issues
+- [x] Step 4.5: Report any blocking issues
   - Document issues requiring additional research
   - Provide next steps for any issues beyond minor fixes
 

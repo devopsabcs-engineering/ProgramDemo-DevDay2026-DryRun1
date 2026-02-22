@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "ado": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "azure-devops-mcp",
+        "--organization",
+        "MngEnvMCAP675646",
+        "--project",
+        "ProgramDemo-DevDay2026-DryRun1"
+      ]
+    }
+  }
+}
