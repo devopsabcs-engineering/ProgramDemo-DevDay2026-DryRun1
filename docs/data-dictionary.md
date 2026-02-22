@@ -16,6 +16,7 @@ erDiagram
         INT program_type_id FK "FK to program_type"
         NVARCHAR status "DEFAULT DRAFT"
         NVARCHAR reviewer_comments "Ministry comments"
+        DECIMAL program_budget "Budget amount (15,2)"
         DATETIME2 submitted_at "Submission timestamp"
         DATETIME2 reviewed_at "Review timestamp"
         DATETIME2 created_at "Record created"
@@ -69,6 +70,7 @@ The main transactional table storing citizen program submissions and their revie
 | `created_at` | `DATETIME2` | `NOT NULL`, `DEFAULT GETDATE()` | Record creation timestamp |
 | `updated_at` | `DATETIME2` | `NOT NULL`, `DEFAULT GETDATE()` | Last update timestamp |
 | `created_by` | `NVARCHAR(100)` | `NOT NULL` | Identifier of the submitting citizen |
+| `program_budget` | `DECIMAL(15,2)` | `NULL` | Optional budget amount for the program |
 
 **Relationships**:
 - Many-to-one with `program_type` via `program_type_id`
@@ -126,3 +128,4 @@ Flyway versioned migrations create and seed the database schema:
 | `V002__create_program_table.sql` | Creates the `program` table with FK to `program_type` |
 | `V003__create_notification_table.sql` | Creates the `notification` table with FK to `program` |
 | `V004__seed_program_types.sql` | Seeds the 5 program types with EN/FR names |
+| `V005__add_program_budget.sql` | Adds `program_budget` column to the `program` table |

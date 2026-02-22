@@ -12,6 +12,7 @@ interface FormErrors {
   programDescription?: string;
   programTypeId?: string;
   createdBy?: string;
+  programBudget?: string;
 }
 
 const SubmitProgram: React.FC = () => {
@@ -24,6 +25,7 @@ const SubmitProgram: React.FC = () => {
     programDescription: '',
     programTypeId: 0,
     createdBy: '',
+    programBudget: null,
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitting, setSubmitting] = useState(false);
@@ -51,6 +53,9 @@ const SubmitProgram: React.FC = () => {
       newErrors.createdBy = t('submit.validation.createdByRequired');
     } else if (formData.createdBy.length > 255) {
       newErrors.createdBy = t('submit.validation.createdByMaxLength');
+    }
+    if (formData.programBudget !== null && formData.programBudget < 0) {
+      newErrors.programBudget = t('submit.validation.budgetMin');
     }
     return newErrors;
   };
@@ -190,6 +195,35 @@ const SubmitProgram: React.FC = () => {
             required
             aria-required="true"
             aria-invalid={!!errors.createdBy}
+          />
+        </div>
+
+        <div className={`ontario-form-group ${errors.programBudget ? 'ontario-form-group--error' : ''}`}>
+          <label className="ontario-label" htmlFor="programBudget">
+            {t('submit.programBudget')}
+          </label>
+          {errors.programBudget && (
+            <div className="ontario-error-messaging" role="alert" id="programBudget-error">
+              <span className="ontario-error-messaging__content">{errors.programBudget}</span>
+            </div>
+          )}
+          <input
+            className="ontario-input"
+            type="number"
+            id="programBudget"
+            aria-describedby={errors.programBudget ? 'programBudget-error' : undefined}
+            name="programBudget"
+            value={formData.programBudget ?? ''}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                programBudget: e.target.value ? Number(e.target.value) : null,
+              })
+            }
+            placeholder={t('submit.programBudgetPlaceholder')}
+            min="0"
+            step="0.01"
+            aria-invalid={!!errors.programBudget}
           />
         </div>
 

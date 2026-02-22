@@ -1,5 +1,8 @@
 package com.ontario.program.dto;
 
+import java.math.BigDecimal;
+
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -21,6 +24,9 @@ public record ProgramSubmitRequest(
 
         @NotBlank(message = "Created by is required")
         @Size(max = 100, message = "Created by must not exceed 100 characters")
-        String createdBy
+        String createdBy,
+
+        @DecimalMin(value = "0", message = "Program budget must be zero or positive")
+        BigDecimal programBudget
 ) {
 }

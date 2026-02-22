@@ -33,6 +33,8 @@
     "submitButton": "Submit Request",
     "submitting": "Submitting...",
     "required": "required",
+    "programBudget": "Program Budget",
+    "programBudgetPlaceholder": "Enter budget amount",
     "validation": {
       "nameRequired": "Program name is required",
       "nameMaxLength": "Program name must be 255 characters or fewer",
@@ -40,7 +42,8 @@
       "descriptionMaxLength": "Program description must be 4000 characters or fewer",
       "typeRequired": "Program type is required",
       "createdByRequired": "Your name is required",
-      "createdByMaxLength": "Your name must be 255 characters or fewer"
+      "createdByMaxLength": "Your name must be 255 characters or fewer",
+      "budgetMin": "Budget must be zero or a positive amount"
     }
   },
   "confirmation": {
@@ -52,6 +55,7 @@
     "status": "Status",
     "submittedAt": "Submitted At",
     "submittedBy": "Submitted By",
+    "programBudget": "Program Budget",
     "submitAnother": "Submit Another Request",
     "searchPrograms": "Search Programs"
   },
@@ -114,6 +118,7 @@
       "status": "Status",
       "submittedAt": "Submitted At",
       "submittedBy": "Submitted By",
+      "programBudget": "Program Budget",
       "reviewedAt": "Reviewed At",
       "reviewAction": "Review Action",
       "comments": "Reviewer Comments",

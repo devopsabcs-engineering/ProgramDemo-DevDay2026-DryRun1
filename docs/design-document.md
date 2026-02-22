@@ -20,6 +20,7 @@
 | `programDescription` | `String` | `@NotBlank` | Detailed description of the program |
 | `programTypeId` | `Integer` | `@NotNull` | Foreign key reference to `program_type` |
 | `createdBy` | `String` | `@NotBlank`, `@Size(max=100)` | Identifier of the submitting citizen |
+| `programBudget` | `BigDecimal` | `@DecimalMin("0")` | Optional budget amount for the program |
 
 ### `ProgramReviewRequest`
 
@@ -47,6 +48,7 @@
 | `createdAt` | `String` (ISO 8601) | Record creation timestamp |
 | `updatedAt` | `String` (ISO 8601) | Last update timestamp |
 | `createdBy` | `String` | Submitter identifier |
+| `programBudget` | `BigDecimal` | Optional budget amount |
 
 ### `ProgramTypeResponse`
 

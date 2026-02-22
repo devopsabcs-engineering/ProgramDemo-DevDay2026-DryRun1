@@ -25,6 +25,7 @@ const mockProgram = {
   createdAt: '2026-01-15T14:30:00',
   updatedAt: '2026-01-15T14:30:00',
   createdBy: 'John Smith',
+  programBudget: null,
 };
 
 describe('ReviewDetail', () => {

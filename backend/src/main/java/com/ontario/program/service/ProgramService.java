@@ -48,6 +48,7 @@ public class ProgramService {
         );
         program.setStatus("SUBMITTED");
         program.setSubmittedAt(LocalDateTime.now());
+        program.setProgramBudget(request.programBudget());
 
         Program saved = programRepository.save(program);
         return toResponse(saved);
@@ -113,7 +114,8 @@ public class ProgramService {
                 program.getReviewedAt(),
                 program.getCreatedAt(),
                 program.getUpdatedAt(),
-                program.getCreatedBy()
+                program.getCreatedBy(),
+                program.getProgramBudget()
         );
     }
 

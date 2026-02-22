@@ -1,5 +1,6 @@
 package com.ontario.program.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
@@ -18,6 +19,7 @@ public record ProgramResponse(
         LocalDateTime reviewedAt,
         LocalDateTime createdAt,
         LocalDateTime updatedAt,
-        String createdBy
+        String createdBy,
+        BigDecimal programBudget
 ) {
 }

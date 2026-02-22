@@ -17,6 +17,7 @@ const mockProgram = {
   createdAt: '2026-01-15T14:30:00',
   updatedAt: '2026-01-15T14:30:00',
   createdBy: 'Jane Doe',
+  programBudget: null,
 };
 
 vi.mock('react-router-dom', async () => {
