@@ -1,0 +1,56 @@
+## Azure SQL profile — connects to Azure SQL Database using
+## Entra ID (Azure AD) authentication via managed identity.
+##
+## Usage:
+##   java -jar target/program-approval-api-*.jar --spring.profiles.active=azuresql
+##   -- or --
+##   .\scripts\Start-Local.ps1 -UseAzureSql
+##
+## Prerequisites:
+##   1. az login               (Azure CLI must be authenticated for local dev)
+##   2. Your AAD user must be in the SQL admin group
+##   3. Your client IP must be allowed through the Azure SQL firewall (local dev only)
+##   4. In Azure App Service, the managed identity handles authentication automatically
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://sql-ops-demo-dev-125.database.windows.net:1433;database=programdb;encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=60;authentication=ActiveDirectoryDefault;connectRetryCount=3;connectRetryInterval=10;
+    username:
+    password:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    hikari:
+      initialization-fail-timeout: 120000
+      connection-timeout: 60000
+      maximum-pool-size: 10
+      minimum-idle: 2
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    validate-on-migrate: true
+    connect-retries: 3
+    connect-retries-interval: 10
+
+server:
+  port: 8080
+
+app:
+  cors:
+    allowed-origin: http://localhost:3000
+
+logging:
+  level:
+    com.ontario: DEBUG
+    org.springframework.web: DEBUG
+    org.flywaydb: DEBUG
+    com.microsoft.sqlserver: DEBUG

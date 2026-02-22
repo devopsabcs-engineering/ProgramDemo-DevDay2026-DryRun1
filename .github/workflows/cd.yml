@@ -101,6 +101,16 @@ jobs:
           app-name: ${{ env.BACKEND_APP_NAME }}
           package: backend-artifact
 
+      - name: Configure App Service settings for Entra ID auth
+        run: |
+          az webapp config appsettings set \
+            --resource-group "${{ env.RESOURCE_GROUP }}" \
+            --name "${{ env.BACKEND_APP_NAME }}" \
+            --settings \
+              SPRING_PROFILES_ACTIVE=azuresql \
+              SPRING_DATASOURCE_URL="jdbc:sqlserver://${{ env.SQL_SERVER_NAME }}.database.windows.net:1433;database=${{ env.SQL_DATABASE_NAME }};encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=60;authentication=ActiveDirectoryDefault;connectRetryCount=3;connectRetryInterval=10;" \
+            --only-show-errors
+
   deploy-frontend:
     name: Deploy Frontend
     runs-on: ubuntu-latest

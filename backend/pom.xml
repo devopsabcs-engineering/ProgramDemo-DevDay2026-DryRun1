@@ -58,6 +58,13 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Azure Identity for Entra ID authentication with Azure SQL -->
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-identity</artifactId>
+            <version>1.15.4</version>
+        </dependency>
+
         <!-- H2 (local development and testing) -->
         <dependency>
             <groupId>com.h2database</groupId>
