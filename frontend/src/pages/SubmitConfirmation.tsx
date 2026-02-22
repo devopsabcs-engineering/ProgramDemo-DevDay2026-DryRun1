@@ -35,7 +35,7 @@ const SubmitConfirmation: React.FC = () => {
       </div>
 
       <h2 className="ontario-h3">{t('confirmation.details')}</h2>
-      <table className="ontario-table ontario-table--simple">
+      <table className="ontario-table ontario-table--simple" aria-label={t('confirmation.details')}>
         <tbody>
           <tr>
             <th scope="row">{t('confirmation.programName')}</th>
